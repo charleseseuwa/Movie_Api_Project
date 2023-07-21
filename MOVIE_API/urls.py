@@ -24,5 +24,5 @@ urlpatterns = [
     path("", include("api.urls")),
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
-    # path("login/", obtain_auth_token, name= "login")
+    # path("accounts/login/", obtain_auth_token, name= "login")
 ]

@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'content.apps.ContentConfig',
     'rest_framework',
     'api.apps.ApiConfig',
-    'rest_framework.authtoken',
+    # 'rest_framework.authtoken',
     'drf_yasg',
     'coreapi',
+    'decouple',
     'rest_framework_simplejwt',
     
 ]
@@ -63,19 +64,21 @@ ROOT_URLCONF = 'MOVIE_API.urls'
 
 REST_FRAMEWORK = {
     
-        'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 
     
     # 'DEFAULT_AUTHENTICATION_CLASSES': [
     #     'rest_framework.authentication.TokenAuthentication',
     # ],
-    
-      'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ],
-      
+
+    # 'DEFAULT_PERMISSION_CLASSES': [
+        
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ],
+        
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 5,
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
